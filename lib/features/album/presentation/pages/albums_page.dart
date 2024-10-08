@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  static const String path = '/HomePage';
+class AlbumsPage extends StatelessWidget {
+  static const String path = '/AlbumsPage';
 
   static route() => MaterialPageRoute(
-    builder: (_) => content(),
-  );
+        builder: (_) => content(),
+      );
 
-  static content() => const HomePage();
+  static content() => const AlbumsPage();
 
-  const HomePage({super.key});
+  const AlbumsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Home',
+          'Albums',
         ),
         centerTitle: false,
       ),
