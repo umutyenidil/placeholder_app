@@ -1,24 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:placeholder_app/features/album/domain/entities/album_entity.dart';
+import 'package:placeholder_app/features/album/presentation/blocs/album/album_bloc.dart';
+import 'package:placeholder_app/features/album/presentation/widgets/album_list.dart';
+import 'package:placeholder_app/features/post/domain/entities/post_entity.dart';
+import 'package:placeholder_app/features/post/presentation/blocs/post/post_bloc.dart';
+import 'package:placeholder_app/features/post/presentation/providers/posts_provider.dart';
+import 'package:placeholder_app/features/post/presentation/widgets/post_list.dart';
+import 'package:provider/provider.dart';
 
-class AlbumsPage extends StatelessWidget {
+import '../providers/albums_provider.dart';
+
+class AlbumsPage extends StatefulWidget {
   static const String path = '/AlbumsPage';
 
   static route() => MaterialPageRoute(
         builder: (_) => content(),
       );
 
-  static content() => const AlbumsPage();
+  static content() => ChangeNotifierProvider(
+        create: (_) => AlbumsProvider(),
+        child: const AlbumsPage(),
+      );
 
   const AlbumsPage({super.key});
 
   @override
+  State<AlbumsPage> createState() => _AlbumsPageState();
+}
+
+class _AlbumsPageState extends State<AlbumsPage> {
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<AlbumBloc>(context).add(ReadAlbumsEvent());
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Albums',
+    return BlocListener<AlbumBloc, AlbumState>(
+      listener: (context, state) {
+        if (state is AlbumLoading<ReadAlbumsEvent>) {
+          Provider.of<AlbumsProvider>(context, listen: false).albums = null;
+        } else if (state is AlbumLoaded<ReadAlbumsEvent, List<AlbumEntity>>) {
+          Provider.of<AlbumsProvider>(context, listen: false).albums = state.result;
+        }
+      },
+      child: Scaffold(
+        key: context.read<AlbumsProvider>().scaffoldKey,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: const Text(
+            'Albums',
+          ),
+          centerTitle: false,
         ),
-        centerTitle: false,
+        body: const AlbumList(),
       ),
     );
   }
