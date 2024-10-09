@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:placeholder_app/core/routes/router.dart';
-import 'package:placeholder_app/features/home.dart';
 import 'package:placeholder_app/features/post/presentation/pages/posts_page.dart';
 
 class LaunchPage extends StatefulWidget {

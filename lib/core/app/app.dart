@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bloc_providers.dart';
 import 'package:placeholder_app/core/routes/router.dart';
 
 class App extends StatelessWidget {
@@ -6,8 +7,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: router,
+    return BlocProviders(
+      child: MaterialApp.router(
+        routerConfig: router,
+      ),
     );
   }
 }

@@ -1,0 +1,4 @@
+enum ExceptionTypes {
+  internalServer,
+  notFound,
+}
