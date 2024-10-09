@@ -17,7 +17,6 @@ class AlbumRepositoryImpl implements AlbumRepository {
   FutureResult<List<AlbumEntity>> readAlbums() async {
     try {
       final result = await _remoteSource.readAlbums();
-      print("test");
 
 
       return Right(result);

@@ -1,16 +1,65 @@
-# placeholder_app
+# Flutter Clean Architecture App
 
-A new Flutter project.
+## Overview
+
+This Flutter application is built using **Clean Architecture** principles, aiming for modularity, testability, and scalability. The app interacts with external APIs to fetch **albums** and **posts** and displays the data efficiently using a state management system.
+
+### API Endpoints
+- **Albums**: [https://jsonplaceholder.typicode.com/users/1/albums](https://jsonplaceholder.typicode.com/users/1/albums)
+- **Posts**: [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts)
+
+## Key Technologies & Packages
+
+This project incorporates several important libraries and packages to adhere to best practices and ensure a smooth development experience:
+
+- **[go_router](https://pub.dev/packages/go_router)**: Declarative routing to handle navigation in a clean and structured way.
+- **[Bloc & Provider](https://pub.dev/packages/flutter_bloc)**: For state management, allowing reactive and predictable UI updates.
+- **[Equatable](https://pub.dev/packages/equatable)**: Simplifies equality comparisons within state management, especially for Bloc.
+- **[Dartz](https://pub.dev/packages/dartz)**: Enables functional programming, particularly helpful for handling `Either` types, reducing boilerplate error handling.
+- **[Get_it](https://pub.dev/packages/get_it)**: Used as a service locator for dependency injection, making it easier to decouple classes and manage dependencies.
+
+## App Architecture
+
+This project follows **Clean Architecture**, which separates the codebase into distinct layers. Each layer is responsible for a specific part of the application’s functionality:
+
+1. **Presentation Layer**: Contains the UI and handles interaction with the user through **Bloc**.
+2. **Domain Layer**: Contains business logic, including use cases and models.
+3. **Data Layer**: Manages data access, whether from the API, local storage, or other sources, and implements repositories.
+
+## Features
+
+- Fetch and display **albums** and **posts** using the provided APIs.
+- Navigate between different sections of the app using **go_router**.
+- Reactive state management with **Bloc** and **Provider**.
+- Improved equality checks with **Equatable**.
+- Functional programming techniques using **Dartz** for better error handling.
+- Clean dependency injection with **Get_it** for managing services and repositories.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- **Flutter SDK**: Ensure you have Flutter installed on your machine. [Install Flutter](https://flutter.dev/docs/get-started/install)
+- **Dart**: The app uses Dart, so ensure you have Dart as part of your Flutter SDK.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/umutyenidil/placeholder_app.git
+    ```
+
+2. Navigate to the project directory:
+    ```bash
+    cd placeholder_app
+    ```
+
+3. Install dependencies:
+    ```bash
+    flutter pub get
+    ```
+
+4. Run the app:
+    ```bash
+    flutter run
+    ```

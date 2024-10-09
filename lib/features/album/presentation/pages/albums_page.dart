@@ -3,10 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:placeholder_app/features/album/domain/entities/album_entity.dart';
 import 'package:placeholder_app/features/album/presentation/blocs/album/album_bloc.dart';
 import 'package:placeholder_app/features/album/presentation/widgets/album_list.dart';
-import 'package:placeholder_app/features/post/domain/entities/post_entity.dart';
-import 'package:placeholder_app/features/post/presentation/blocs/post/post_bloc.dart';
-import 'package:placeholder_app/features/post/presentation/providers/posts_provider.dart';
-import 'package:placeholder_app/features/post/presentation/widgets/post_list.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/albums_provider.dart';

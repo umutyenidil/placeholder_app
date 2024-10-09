@@ -15,8 +15,6 @@ class ReadAlbumsUseCase implements UseCase<List<AlbumEntity>, NoParams> {
   FutureResult<List<AlbumEntity>> call(
     NoParams params,
   ) async {
-    print("test");
-
     return await _repository.readAlbums();
   }
 }

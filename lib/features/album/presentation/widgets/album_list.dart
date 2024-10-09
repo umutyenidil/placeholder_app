@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:placeholder_app/features/album/presentation/widgets/album_card.dart';
-import 'package:placeholder_app/features/post/presentation/widgets/post_card.dart';
 import 'package:provider/provider.dart';
 
 import '../../../post/presentation/blocs/post/post_bloc.dart';

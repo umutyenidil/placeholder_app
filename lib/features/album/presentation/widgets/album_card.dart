@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:placeholder_app/features/album/domain/entities/album_entity.dart';
-import 'package:placeholder_app/features/post/domain/entities/post_entity.dart';
 
 class AlbumCard extends StatelessWidget {
   final AlbumEntity album;
