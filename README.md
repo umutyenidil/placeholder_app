@@ -4,6 +4,11 @@
 
 This Flutter application is built using **Clean Architecture** principles, aiming for modularity, testability, and scalability. The app interacts with external APIs to fetch **albums** and **posts** and displays the data efficiently using a state management system.
 
+<img src="https://github.com/user-attachments/assets/dffacd92-ab56-4f0f-8619-7fe4b1d4550c" alt="Screenshot 1" width="200"/>
+<img src="https://github.com/user-attachments/assets/d24130f1-18c0-47bc-a1bc-fe3d8cc71d81" alt="Screenshot 2" width="200"/>
+<img src="https://github.com/user-attachments/assets/96fada6a-9868-4085-9111-cbda24bbd766" alt="Screenshot 3" width="200"/>
+<img src="https://github.com/user-attachments/assets/ea69b12e-3e06-4740-a5c3-2f5209d2bb0d" alt="Screenshot 4" width="200"/>
+
 ### API Endpoints
 - **Albums**: [https://jsonplaceholder.typicode.com/users/1/albums](https://jsonplaceholder.typicode.com/users/1/albums)
 - **Posts**: [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts)
